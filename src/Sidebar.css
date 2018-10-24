@@ -1,0 +1,9 @@
+aside {
+  background-color: aqua;
+  width: 300px;
+}
+nav ul li{
+  display: flex;
+  flex-direction: column;
+}
+
