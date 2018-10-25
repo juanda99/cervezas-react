@@ -2,12 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import CervezaSnippet from '../components/Cervezas/CervezasSnippet'
 
-const CervezasList = props => {
-  const { cervezas } = this.props
+const CervezasList = ({ cervezas }) => {
+  // const { cervezas, bares } = props
   return (
     <div>
       {cervezas.map(cerveza => (
-        <CervezaSnippet nombre={cerveza.nombre} desc={cerveza.desc} />
+        <CervezaSnippet
+          key={cerveza.nombre}
+          nombre={cerveza.nombre}
+          desc={cerveza.descripción}
+          envase={cerveza.envase}
+        />
       ))}
     </div>
   )
@@ -18,8 +23,8 @@ CervezasList.propTypes = {
     PropTypes.shape({
       nombre: PropTypes.string.required,
       desc: PropTypes.string
-    }).required
-  )
+    })
+  ).isRequired
 }
 
 export default CervezasList
